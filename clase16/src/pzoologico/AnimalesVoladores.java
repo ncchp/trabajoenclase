@@ -21,7 +21,31 @@ public class AnimalesVoladores {
 
 	@Override
 	public String toString() {
-		return "AnimalesVoladores [plumas=" + plumas + ", tamaño=" + tamaño + ", migrante=" + migrante + super.toString() + "]";
+		return "AnimalesVoladores [ super.toString() + plumas=" + plumas + ", tamaño=" + tamaño + ", migrante=" + migrante  + "]";
+	}
+
+	public String getPlumas() {
+		return plumas;
+	}
+
+	public void setPlumas(String plumas) {
+		this.plumas = plumas;
+	}
+
+	public double getTamaño() {
+		return tamaño;
+	}
+
+	public void setTamaño(double tamaño) {
+		this.tamaño = tamaño;
+	}
+
+	public boolean isMigrante() {
+		return migrante;
+	}
+
+	public void setMigrante(boolean migrante) {
+		this.migrante = migrante;
 	}
 	
 	

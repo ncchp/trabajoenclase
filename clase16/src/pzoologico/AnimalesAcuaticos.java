@@ -29,6 +29,42 @@ public class AnimalesAcuaticos extends Animales {
 		return "AnimalesAcuaticos [tipoAmbiente=" + tipoAmbiente + ", cantAletas=" + cantAletas + ", nivelAgresividad="
 				+ nivelAgresividad + super.toString() + "]";
 	}
+
+
+
+	public String getTipoAmbiente() {
+		return tipoAmbiente;
+	}
+
+
+
+	public void setTipoAmbiente(String tipoAmbiente) {
+		this.tipoAmbiente = tipoAmbiente;
+	}
+
+
+
+	public int getCantAletas() {
+		return cantAletas;
+	}
+
+
+
+	public void setCantAletas(int cantAletas) {
+		this.cantAletas = cantAletas;
+	}
+
+
+
+	public int getNivelAgresividad() {
+		return nivelAgresividad;
+	}
+
+
+
+	public void setNivelAgresividad(int nivelAgresividad) {
+		this.nivelAgresividad = nivelAgresividad;
+	}
 	
 	
 
