@@ -3,6 +3,7 @@ package oscurilandia;
 public class Kromi extends Carro{
     private String anioFabricacion;
     private String marca;
+    
     public Kromi(int cantidadOcupantes, String fechaIngresoInstitucion, String anioFabricacion, String marca) {
         super(cantidadOcupantes, fechaIngresoInstitucion);
         this.anioFabricacion = anioFabricacion;

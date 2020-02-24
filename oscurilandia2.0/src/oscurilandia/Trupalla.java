@@ -3,6 +3,7 @@ package oscurilandia;
 public class Trupalla extends Carro {
     private int niveldeArmadura;
     private String nombreManipula;
+    
     public Trupalla(int cantidadOcupantes, String fechaIngresoInstitucion, int nivelArmadura, String nombreManipula) {
         super(cantidadOcupantes, fechaIngresoInstitucion);
         this.niveldeArmadura = nivelArmadura;

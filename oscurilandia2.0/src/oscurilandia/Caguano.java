@@ -2,6 +2,7 @@ package oscurilandia;
 public class Caguano extends Carro {
     private int	alcanceTiro;
     private String colorConfeti;
+    
     public Caguano(int cantidadOcupantes2, String fechaIngresoInstitucion, int alcanceTiro, String colorConfeti) {
         super(cantidadOcupantes2, fechaIngresoInstitucion);
         this.alcanceTiro = alcanceTiro;

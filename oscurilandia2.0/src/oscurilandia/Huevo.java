@@ -6,6 +6,7 @@ package oscurilandia;
 public class Huevo {
     private int filaC;
     private int columnaC;
+    
     public Huevo(int filaC, int columnaC) {
         this.filaC = filaC;
         this.columnaC = columnaC;

@@ -10,9 +10,10 @@ public class Tablero {
     public static List<Kromi> Lista_Kromi = new ArrayList<Kromi>();
     public static List<Caguano> Lista_Caguano = new ArrayList<Caguano>();
     public static List<Trupalla> Lista_Trupalla = new ArrayList<Trupalla>();
-    public static List<Huevo> Lista_Huevo = new ArrayList<Huevo>();
+    public static List<Huevo> Lista_Huevo = new ArrayList<Huevo>();    
     private static int puntaje = 0;
     private static char[][] tablero;
+    
     public static void iniciarMatriz() {
         tablero = new char[15][15];
         for (int i = 0; i < 15; i++) {
@@ -21,6 +22,7 @@ public class Tablero {
             }
         }
     }
+    
     public static void mostrar() {
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
@@ -29,6 +31,29 @@ public class Tablero {
             System.out.println(" ");
         }
     }
+
+    public static void verificarDestruidos() {
+    	
+    	for (Kromi kro:Lista_Kromi) {
+    		int fila = kro.getFilaC();
+    		int columna = kro.getColumnaC();
+    		
+    		if (tablero[fila][columna] == 'H' && tablero[fila+1][columna] == 'H' && tablero[fila+2][columna] == 'H') {
+    			puntaje += 10;
+    		}
+    	}
+
+    	for (Caguano cag:Lista_Caguano) {
+    		int fila = cag.getFilaC();
+    		int columna = cag.getColumnaC();
+    		
+    		if (tablero[fila][columna] == 'H' && tablero[fila][columna+1] == 'H') {
+    			puntaje += 7;
+    		}
+    	}
+    	
+    }
+    
     public static void lanzarHuevo() {
         //pedir fila por teclado
         //pedir columna por teclado
@@ -45,8 +70,6 @@ public class Tablero {
         if (tablero[filaC][columnaC] == 'K') {
             tablero[filaC][columnaC] = 'H';
             puntaje = puntaje + 3;
-           //do(tablero[filaK][columnaK] == 'K'&& tablero[filaK+1][columnaK] == 'K'&& tablero[filaK+2][columnaK] == 'K'){
-           // while (puntaje +10);
         } else if (tablero[filaC][columnaC] == 'C') {
             tablero[filaC][columnaC] = 'H';
             puntaje = puntaje + 2;
@@ -56,9 +79,11 @@ public class Tablero {
         }
         System.out.println("... lanzando huevo ... ");
     }
+    
     public static void verPuntaje() {
         System.out.println("EL PUNTAJE TOTAL ES : " + puntaje);
     }
+    
     public static void agregar() {
         /*INGRESO EN LA SENTENCIA*/
         System.out.println("ELIGA OPCION PARA INGRESAR UN CARRO");
@@ -165,12 +190,16 @@ public class Tablero {
                 System.out.println("Opcion no valida");
         }//cierra Switch
     }//cierra metodo
+
     private static void salir() {
+    	verificarDestruidos();
+    	verPuntaje();
         System.out.println("Salida ");
     }
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         //Menu del programa y lector de variables.
         iniciarMatriz();
@@ -208,5 +237,6 @@ public class Tablero {
                     break;
             }
         } while (opcionMenu1 != 5);
+        
     }
 }
